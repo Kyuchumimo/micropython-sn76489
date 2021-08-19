@@ -1,4 +1,4 @@
-# SN76489AN-microPython
+# SN76489AN-MicroPython
 MicroPython script for SN76489AN hardware music playback
 
 -Authors-  
