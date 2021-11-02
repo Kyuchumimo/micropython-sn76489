@@ -135,7 +135,7 @@ class Music76489:
             vgm_version = struct.unpack_from("<I", header, 8)[0]
             if vgm_version != 0x150:
                 raise Exception(
-                    "Invalid VGM version format; got {0:x}, want 0x150".format(vgm_version) #K: f-string unsupported by micropython, changed for str.format()
+                    f"Invalid VGM version format; got {vgm_version:x}, want 0x150"
                 )
 
             # 0x0c: SN76489 clock (32 bits)
@@ -144,7 +144,7 @@ class Music76489:
             sn76489_clock = struct.unpack_from("<I", header, 12)[0]
             if sn76489_clock != 3579545:
                 raise Exception(
-                    "Invalid VGM clock freq; got {0}, want 357945".format(sn76489_clock) #K: f-string unsupported by micropython, changed for str.format()
+                    f"Invalid VGM clock freq; got {sn76489_clock}, want 357945"
                 )
 
             # 0x04: Eof offset (32 bits)
@@ -188,7 +188,7 @@ class Music76489:
         i = self._offset
         while True:
             if i >= len(data):
-                raise Exception("unexpected offset: {0} >= {1}".format(i,len(data))) #K: f-string unsupported by micropython, changed for str.format()
+                raise Exception(f"unexpected offset: {i} >= {len(data)}")
 
             # Valid commands
             #  0x4f dd    : Game Gear PSG stereo, write dd to port 0x06
