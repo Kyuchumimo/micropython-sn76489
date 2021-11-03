@@ -1,5 +1,5 @@
 # SN76489AN-MicroPython
-MicroPython 1.17+ script for SN76489AN hardware music playback
+MicroPython v1.17+ script for SN76489AN hardware music playback
 
 -Authors-  
 CircuitPython to MicroPython conversion by Kyuchumimo  
