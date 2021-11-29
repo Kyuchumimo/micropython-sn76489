@@ -453,7 +453,7 @@ class Music76489:
         self._sr[0] = byte_data #K: sr.gpio replacement
 
         # Enable SN76489
-        self._sn76489_we.value(False) #K: same as '.value = True'
+        self._sn76489_we.value(False) #K: same as '.value = False'
         # Allow it to read, and wait a very small time (needed?)
         # time.sleep(0.001)
         # Disable SN76489
