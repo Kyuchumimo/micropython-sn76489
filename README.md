@@ -7,13 +7,8 @@ To import the .VGM files please use Thonny IDE
 
 ## Example
 ```
-import machine
 import time
 import music76489
-
-pwm = machine.PWM(machine.Pin(15))
-pwm.freq(3579000)
-pwm.duty_u16(32767)
 
 music = music76489.Music76489()
 
