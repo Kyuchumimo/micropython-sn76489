@@ -19,7 +19,7 @@ music.load_vgm("boss_battle.vgm")
 
 while True:
     music.tick()
-    time.sleep(0.016666)
+    time.sleep(0.016)
 ```
 
 ## Authors  
