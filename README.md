@@ -1,12 +1,12 @@
 # SN76489AN-MicroPython  
 ![SN76489 wiring](https://user-images.githubusercontent.com/74131798/143735345-13715234-169d-40fd-b777-f2a5850d6855.png)
 
-MicroPython v1.17+ script for SN76489AN hardware music playback
+MicroPython v1.17+ script for SN76489AN + SN74HC595N hardware music playback.
 
 Supports Master System/Game Gear .VGM files from DefleMask Legacy.
 To import the .VGM files please use Thonny IDE.
 
-You can use a PWM signal as a clock signal without any problem
+You can use a PWM signal as a clock signal without any problem.
 
 ## Example
 ```
