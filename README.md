@@ -3,7 +3,10 @@
 
 MicroPython v1.17+ script for SN76489AN hardware music playback
 
-To import the .VGM files please use Thonny IDE
+Supports Master System/Game Gear VGM files from Deflemask.
+To import the .VGM files please use Thonny IDE.
+
+You can also use a PWM signal as a clock signal
 
 ## Example
 ```
