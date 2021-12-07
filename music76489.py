@@ -144,7 +144,7 @@ class Music76489:
             sn76489_clock = struct.unpack_from("<I", header, 12)[0]
             if sn76489_clock != 3579545:
                 raise Exception(
-                    f"Invalid VGM clock freq; got {sn76489_clock}, want 357945"
+                    f"Invalid VGM clock freq; got {sn76489_clock}, want 3579545"
                 )
 
             # 0x04: Eof offset (32 bits)
