@@ -1,5 +1,5 @@
 # SN76489AN-MicroPython  
-![SN76489 wiring](https://user-images.githubusercontent.com/74131798/143735345-13715234-169d-40fd-b777-f2a5850d6855.png)
+![SN76489 wiring](https://user-images.githubusercontent.com/74131798/145133756-7b034919-eb7a-4d20-a082-c95bad3793f7.png)
 
 MicroPython v1.17+ script for SN76489AN + SN74HC595N hardware music playback.
 
