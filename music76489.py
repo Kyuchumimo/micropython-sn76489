@@ -15,15 +15,22 @@
 """
 `quico_music76489`
 ================================================================================
+
 MicroPython library for playing chiptune music. Intended to work on Raspberry Pi Pico
-* Author(s): Ricardo Quesada (CircuitPython), Kyuchumimo (CircuitPython-MicroPython conversion), mcauser (74hc595 Micropython Library)
+
+* Author(s): Ricardo Quesada (CircuitPython), Kyuchumimo (CircuitPython-MicroPython conversion)
+
 Implementation Notes
 --------------------
+
 Supports VGM format 1.50:
  - https://www.smspower.org/uploads/Music/vgmspec150.txt
  - There are newer VGM formats, but supporting the one used in Deflemask.
+
 **Hardware:**
+
 * Raspberry Pi Pico: https://datasheets.raspberrypi.org/pico/pico-datasheet.pdf
+
 * SN74HC595N 8-Bit Shift Registers:
                   ----U----
   QB Output  01 -|QB    Vcc|- 16  Supply Voltage (3-5V)
@@ -35,6 +42,7 @@ Supports VGM format 1.50:
   QH Output  07 -|QH  SRCLR|- 10  Shift Register Clear
      Ground  08 -|GND   QH'|- 09  Daisy chain
                   ---------
+
 * SN76489AN Digital Complex Sound Generator:
                          ----U----
   Input Data Bus 2  01 -|D2    Vcc|- 16  Supply Voltage (5V nominally)
@@ -46,8 +54,11 @@ Supports VGM format 1.50:
          Audio Out  07 -|AOUT   D7|- 10  Input Data Bus 7
             Ground  08 -|GND    NC|- 09  No connection
                          ---------
+
 **Software and Dependencies:**
+
 * micropython-74hc595: https://github.com/mcauser/micropython-74hc595
+
 """
 
 import struct
@@ -75,7 +86,9 @@ __docformat__ = "restructuredtext"
 
 
 class Music76489:
-    """Class to play music on an SN76489 chip
+    """
+    Class to play music on an SN76489 chip
+
     For detailed information about the internals of the SN76489 chip, read:
     https://www.smspower.org/Development/SN76489
     """
@@ -102,8 +115,10 @@ class Music76489:
     def load_vgm(self, filename: str) -> None:
         """
         Load a VGM song.
+
         The loaded song does not play automatically. In order to play the song
         the user must call "tick()" every 1/60s.
+
         :param str filename: The VGM song to load.
         """
         self.reset()
@@ -153,6 +168,7 @@ class Music76489:
     def tick(self) -> None:
         """
         Play the loaded VGM song.
+
         Must be called at 1/60s frequency.
         Example:
         m.load_vgm('my_song.vgm')
@@ -245,8 +261,10 @@ class Music76489:
     def play_vgm(self, filename: str) -> None:
         """
         Play a VGM song file.
+
         This is a "sync" function, meaning that it will return only after the
         music ends playing.
+
         :param str filename: The VGM file to play.
         """
         self.load_vgm(filename)
@@ -258,6 +276,7 @@ class Music76489:
     def play_freq(self, channel: int, freq: float) -> None:
         """
         Play a certain frequency.
+
         :param int channel: One of the 3 available channels:0, 1 or 2.
         :param float freq: Frequency to play. Valid range: 110.35 - 55930.4
         """
@@ -303,7 +322,9 @@ class Music76489:
     def play_notes(self, notes: str) -> None:
         """
         Play music notes.
+
         Supported values are:
+
         Notes: C, C#, D, D#, E, F, F#, G, G#, A, A#, B
         Voice: Vn, where n is:0, 1 or 2
         Octave: On, where n is: 0-9
@@ -314,7 +335,9 @@ class Music76489:
          Q: Quarter
          I: Eighth
          S: Sixteenth
+
         Example: TODO
+
         :param str notes: Notes to play.
         """
         # Inspired by C128 "play" BASIC command:
@@ -390,6 +413,7 @@ class Music76489:
     def play_noise(self, mode: int, shift_rate: int) -> None:
         """
         Play noise in channel 3.
+
         :param int mode: Supported modes: 0==periodic noise, 1==white noise
         :param shift_rate int: Shift rate to used according to the SN76489 specification.
         """
@@ -409,6 +433,7 @@ class Music76489:
     def set_vol(self, channel: int, vol: int) -> None:
         """
         Set the volume for the given channel.
+
         :param int channel: Channel to be used. Valid values: 0-3.
         :param int vol: Volume to set. Values:0-15, where 0 is silence and 15 max volume.
         """
@@ -439,6 +464,7 @@ class Music76489:
     def reset(self) -> None:
         """
         Reset the SN76489 chip.
+
         Set volume to 0 in all channels.
         """
         reset_seq = [0x9F, 0xBF, 0xDF, 0xFF]
