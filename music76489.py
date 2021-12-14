@@ -385,9 +385,9 @@ class Music76489:
                 self._play_note(voice, note, octave)
                 i += 1
                 # TODO: support envelops
-                time.sleep(0.016 * duration * 2)
+                time.sleep(0.016666 * duration * 2)
                 self.set_vol(voice, 0)
-                time.sleep(0.016)
+                time.sleep(0.016666)
 
             elif n == "U":
                 # TODO: Remove volument support in favor of envelops
