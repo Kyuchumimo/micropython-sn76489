@@ -92,7 +92,6 @@ class Music76489:
     For detailed information about the internals of the SN76489 chip, read:
     https://www.smspower.org/Development/SN76489
     """
-
     def __init__(self):
         self._offset = 0
         self._data = bytearray()
