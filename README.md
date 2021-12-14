@@ -10,7 +10,7 @@ You can use a PWM signal as a clock signal without any problem.
 
 ## Example
 ```
-import time
+import utime
 import music76489
 
 music = music76489.Music76489()
@@ -19,7 +19,7 @@ music.load_vgm("boss_battle.vgm")
 
 while True:
     music.tick()
-    time.sleep(0.016)
+    utime.sleep(0.016)
 ```
 
 ## Authors  
