@@ -6,7 +6,7 @@ MicroPython v1.17+ library for SN76489AN + SN74HC595N hardware music playback.
 Supports Master System .VGM (v1.50) files from DefleMask Legacy.
 To import the .VGM files please use Thonny IDE.
 
-You can use a PWM signal (3676470 Hz, 50% Duty cycle) as a clock signal without any problem.
+You can use a PWM signal (3584229 Hz, 50% Duty cycle) as a clock signal without any problem.
 
 ## Example
 ```
@@ -18,8 +18,9 @@ music = music76489.Music76489()
 music.load_vgm("boss_battle.vgm")
 
 while True:
+    delta = time.ticks_us()
     music.tick()
-    time.sleep(0.016)
+    time.sleep_us(16666-time.ticks_diff(time.ticks_us(), delta))
 ```
 
 ## Authors  
