@@ -3,6 +3,8 @@
 
 MicroPython v1.17+ library for SN76489AN + SN74HC595N hardware music playback.
 
+https://www.youtube.com/watch?v=EC8a8s6aKmg
+
 Supports Master System .VGM (v1.50) files from DefleMask Legacy.
 To import the .VGM files please use Thonny IDE.
 
