@@ -5,7 +5,7 @@ MicroPython v1.17+ library for SN76489AN + SN74HC595N hardware music playback.
 
 https://www.youtube.com/watch?v=EC8a8s6aKmg
 
-Supports Master System .VGM (v1.50) files from DefleMask Legacy.
+Supports Sega Master System .VGM (v1.50) files from DefleMask Legacy.
 To import the .VGM files please use Thonny IDE.
 
 You can use a PWM signal (3584229 Hz, 50% Duty cycle) as a clock signal without any problem.
