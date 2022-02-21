@@ -422,8 +422,8 @@ class Music76489:
         # Latch + noise
         # bit7: 1=latch
         # bit 5,6: 11=channel 3 (noise)
-        # bit4: 1=noise/tone (not vol)
-        data = 0b1111_0000
+        # bit4: 0=noise/tone (not vol)
+        data = 0b1110_0000
         # mode: white=1, periodic=0
         data |= mode << 2
         data |= shift_rate
