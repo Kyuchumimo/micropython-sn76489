@@ -23,6 +23,10 @@ while True:
     time.sleep_us(16666-time.ticks_diff(time.ticks_us(), delta))
 ```
 
+## Known issues
+If your music contains periodic noise, the pitch will sound one note up.
+This problem is perhaps due to the fact that the SN76489AN chip uses a 15-bit shift register for periodic noise / arbitrary duty cycle instead of 16-bit as in the Sega Master System.
+
 ## Authors  
 CircuitPython to MicroPython conversion by Kyuchumimo  
 CircuitPython script by Ricardo Quesada from quico GitLab Repository  
