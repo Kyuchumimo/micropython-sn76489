@@ -27,34 +27,6 @@ Supports VGM format 1.50:
  - https://www.smspower.org/uploads/Music/vgmspec150.txt
  - There are newer VGM formats, but supporting the one used in Deflemask.
 
-**Hardware:**
-
-* Raspberry Pi Pico: https://datasheets.raspberrypi.org/pico/pico-datasheet.pdf
-
-* SN74HC595N 8-Bit Shift Registers:
-                  ----U----
-  QB Output  01 -|QB    Vcc|- 16  Supply Voltage (3-5V)
-  QC Output  02 -|QC     QA|- 15  QA Output
-  QD Output  03 -|QD    SER|- 14  Serial Input
-  QE Output  04 -|QE     OE|- 13  Output Enable
-  QF Output  05 -|QF   RCLK|- 12  Register Clock / Latch
-  QG Output  06 -|QG  SRCLK|- 11  Shift Register Clock
-  QH Output  07 -|QH  SRCLR|- 10  Shift Register Clear
-     Ground  08 -|GND   QH'|- 09  Daisy chain
-                  ---------
-
-* SN76489AN Digital Complex Sound Generator:
-                         ----U----
-  Input Data Bus 2  01 -|D2    Vcc|- 16  Supply Voltage (5V nominally)
-  Input Data Bus 1  02 -|D1     D3|- 15  Input Data Bus 3
-  Input Data Bus 0  03 -|D0    CLK|- 14  Input Clock
-       Ready (OUT)  04 -|READY  D4|- 13  Input Data Bus 4
-      Write Enable  05 -|WE     D5|- 12  Input Data Bus 5
-       Chip Enable  06 -|CE     D6|- 11  Input Data Bus 6
-         Audio Out  07 -|AOUT   D7|- 10  Input Data Bus 7
-            Ground  08 -|GND    NC|- 09  No connection
-                         ---------
-
 **Software and Dependencies:**
 
 * micropython-74hc595: https://github.com/mcauser/micropython-74hc595
