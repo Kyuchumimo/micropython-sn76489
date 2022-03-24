@@ -16,7 +16,7 @@
 `quico_music76489`
 ================================================================================
 
-MicroPython library for playing chiptune music. Intended to work on Raspberry Pi Pico
+MicroPython library for playing chiptune music.
 
 * Author(s): Ricardo Quesada (CircuitPython), Kyuchumimo (CircuitPython-MicroPython conversion)
 
