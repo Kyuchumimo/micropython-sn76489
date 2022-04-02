@@ -11,7 +11,7 @@ To import the .VGM files please use Thonny IDE.
 You can use a PWM signal (3584229 Hz, 50% Duty cycle) as a clock signal without any problem.
 
 ## Example
-```
+```py
 import time
 import music76489
 
@@ -19,10 +19,14 @@ music = music76489.Music76489()
 
 music.load_vgm("boss_battle.vgm")
 
-while True:
-    delta = time.ticks_us()
-    music.tick()
-    time.sleep_us(16666-time.ticks_diff(time.ticks_us(), delta))
+try:
+    while True:
+        delta = time.ticks_us()
+        music.tick()
+        time.sleep_us(16666-time.ticks_diff(time.ticks_us(), delta))
+except KeyboardInterrupt:
+    music.reset()
+    raise KeyboardInterrupt()
 ```
 
 ## Known issues
