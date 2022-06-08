@@ -327,7 +327,7 @@ class Music76489:
             n = notes[i]
             if n == "V":
                 # Voice: voices go from 0-2
-                voice = notes[i + 1]
+                voice = int(notes[i + 1])
                 i += 2
             elif n == "O":
                 octave = int(notes[i + 1])
