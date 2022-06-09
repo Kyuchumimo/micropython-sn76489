@@ -73,7 +73,7 @@ class Music76489:
         self._ticks_to_wait = 0
         self._end_of_song = False
 
-        self._spi = SPI(0,sck=Pin(6),mosi=Pin(7)) #K: SPI protocol pin assignment, same as busio.SPI(Clock, MOSI/TX(Optional)=board.pin, MISO/RX(Optional)=board.pin)
+        self._spi = SPI(0, sck=Pin(6), mosi=Pin(7)) #K: SPI protocol pin assignment, same as busio.SPI(Clock, MOSI/TX(Optional)=board.pin, MISO/RX(Optional)=board.pin)
         self._latch_pin = Pin(8) #K: Pin A3 digital assignment, same as digitalio.DigitalInOut(board.pin) (rclk)
         self._sr = SR(self._spi, self._latch_pin) #K: adafruit_74hc595 ShiftRegister74HC595 class __init__ Replacement
         self._sn76489_we = Pin(9) #K: Pin A4 digital assignment, same as digitalio.DigitalInOut(board.pin)
