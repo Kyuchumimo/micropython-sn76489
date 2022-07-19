@@ -1,4 +1,4 @@
-# SN76489AN-MicroPython  
+# MicroPython SN76489
 ![SN76489](https://user-images.githubusercontent.com/74131798/161361685-fed18ff8-11bb-4ed5-ac87-17ea40177120.png)
 
 MicroPython library for SN76489AN + SN74HC595N hardware music playback.
