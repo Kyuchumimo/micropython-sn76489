@@ -427,7 +427,7 @@ class Music76489:
 
         # Enable SN76489
         self._sn76489_we.value(False) #K: same as '.value = False'
-        # Allow it to read, and wait a very small time (needed?)
+        # Allow it to read, and wait a very small time
         time.sleep_us(1)
         # Disable SN76489
         self._sn76489_we.value(True) #K: same as '.value = True'
