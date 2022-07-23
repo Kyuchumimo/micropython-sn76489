@@ -26,7 +26,6 @@ try:
         time.sleep_us(16666-time.ticks_diff(time.ticks_us(), delta))
 except KeyboardInterrupt:
     music.reset()
-    raise KeyboardInterrupt()
 ```
 
 ## Known issues
