@@ -8,12 +8,21 @@ https://www.youtube.com/watch?v=EC8a8s6aKmg
 Supports Sega Master System .VGM (v1.50) files from DefleMask Legacy.
 To import the .VGM files please use Thonny IDE.
 
-You can use a PWM signal (3584229 Hz, 50% Duty cycle) as a clock signal without any problem.
+You can use a PWM signal (3579545 Hz, 50% Duty cycle) as a clock signal without any problem.
 
 ## Example
 ```py
 import time
 import music76489
+
+clock = True
+
+if clock:
+    from machine import Pin, PWM
+    
+    clock = PWM(Pin(id))
+    clock.freq(3579545)
+    clock.duty_u16(32768) # duty 50% (65535/2)
 
 music = music76489.Music76489()
 
